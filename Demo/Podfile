@@ -1,0 +1,11 @@
+platform :ios, '14.0'
+
+source 'https://cdn.cocoapods.org'
+
+target 'SwiftPADemo' do
+  use_modular_headers!
+  
+  pod 'SnapKit'
+
+  pod 'SwiftPA', :path => '../'
+end
