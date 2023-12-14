@@ -2,17 +2,18 @@
 //  PAScrollView.swift
 //  SwiftPA
 //
-//  Created by 彭天明 on 2023/12/14.
+//  Created by 云天明 on 2023/12/14.
 //
 
 import UIKit
 import AVFoundation
+import CryptoKit
 
 extension String: PAExtensionWrappable {}
 
 public extension PAExtensionNamespace where T == String {
     
-    static var appName: String? {
+    static var appDisplayName: String? {
         return Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String
     }
     
@@ -151,6 +152,11 @@ public extension PAExtensionNamespace where T == String {
     
     var removeHeadAndTailSpacePro: String {
         return base.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+    
+    var md5: String {
+        guard let data = base.data(using: .utf8) else {return base}
+        return Insecure.MD5.hash(data: data).map { String(format: "%02hhx", $0) }.joined()
     }
     
     func isAlphanumeric() -> Bool {

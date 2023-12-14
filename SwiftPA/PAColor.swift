@@ -2,7 +2,7 @@
 //  PAScrollView.swift
 //  SwiftPA
 //
-//  Created by 彭天明 on 2021/1/22.
+//  Created by 云天明 on 2021/1/22.
 //
 
 import UIKit

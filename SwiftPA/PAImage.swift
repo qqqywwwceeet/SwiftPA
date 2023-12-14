@@ -2,7 +2,7 @@
 //  PAScrollView.swift
 //  SwiftPA
 //
-//  Created by 彭天明 on 2023/12/14.
+//  Created by 云天明 on 2023/12/14.
 //
 
 import UIKit
@@ -168,6 +168,10 @@ public extension PAExtensionNamespace where T == UIImage {
         let scale = min(widthScale, heightScale)
         let targetSize = CGSize.init(width: base.size.width * scale, height: base.size.height * scale)
         return resized(size: targetSize)
+    }
+    
+    func resizable(inset: UIEdgeInsets) -> UIImage {
+        return base.resizableImage(withCapInsets: inset, resizingMode: .stretch)
     }
     
     func flipHorizontal() -> UIImage? {
