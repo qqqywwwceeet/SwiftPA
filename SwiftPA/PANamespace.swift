@@ -9,7 +9,7 @@ import UIKit
 
 public struct PAExtensionNamespace<T> {
     
-    let base: T
+    public let base: T
     public init(_ base: T) {
         self.base = base
     }

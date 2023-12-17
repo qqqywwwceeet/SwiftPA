@@ -24,21 +24,4 @@ public extension PAExtensionNamespace where T == UIDevice {
         return bottom > 0
     }
     
-    static var statusBarHeight: CGFloat {
-        if let top = UIApplication.shared.windows.first?.windowScene?.statusBarManager?.statusBarFrame.height {
-            return top
-        }
-        if let top = UIApplication.shared.windows.first?.safeAreaInsets.top, top > 0 {
-            return top
-        }
-        return 44
-    }
-    
-    static var bottomNotchHeight: CGFloat {
-        if let height = UIApplication.shared.windows.first?.safeAreaInsets.bottom {
-            return height
-        }
-        return 34
-    }
-    
 }

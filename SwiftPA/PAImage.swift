@@ -12,9 +12,10 @@ extension UIImage: PAExtensionWrappable {}
 
 public extension PAExtensionNamespace where T == UIImage {
     
-    static func fromLayer(layer: CALayer) -> UIImage {
+    static func fromLayer(layer: CALayer, scale: CGFloat = UIScreen.main.scale) -> UIImage {
         let format = UIGraphicsImageRendererFormat()
         format.opaque = layer.isOpaque
+        format.scale = scale
         return UIGraphicsImageRenderer(size: layer.bounds.size, format: format).image { context in
             layer.render(in: context.cgContext)
         }
